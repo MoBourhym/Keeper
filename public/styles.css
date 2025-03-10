@@ -1,0 +1,384 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Poppins", serif;
+}
+
+.body {
+
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode (Default) */
+.body-dark {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Light Mode */
+.body-light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.header {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid;
+  border-color: inherit;
+  transition: border-color 0.3s;
+}
+
+.section{
+  display: flex;
+  align-items: center;
+}
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 20px;
+}
+
+.logo-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: inherit;
+  transition: color 0.3s;
+}
+
+.Profile {
+  width: 2.5rem;
+  border-radius: 8px;
+}
+
+/* Search Bar Styling */
+.search-bar {
+  width: 40%;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 10px;
+  outline: none;
+  font-size: 14px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Dark Mode Search Bar */
+.body-dark .search-bar {
+  background-color: #2f2f2f;
+  color: white;
+  border-color: white;
+}
+
+.body-dark .search-bar::placeholder {
+  color: #ffffff;
+}
+
+/* Light Mode Search Bar */
+.body-light .search-bar {
+  background-color: #f2f2f2;
+  color: black;
+  border-color: #c0c0c0;
+}
+
+.body-light .search-bar::placeholder {
+  color: #666666;
+}
+
+.sidebar {
+  left: 0;
+  top: 80px;
+  width: 60px;
+  height: 100vh;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar li {
+  list-style: none;
+}
+
+.material-symbols-outlined,
+.logo .material-symbols-outlined {
+  font-size: 32px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+/* Icon colors for dark/light modes */
+.body-dark .material-symbols-outlined,
+.body-dark .logo .material-symbols-outlined {
+  color: white;
+}
+
+.body-light .material-symbols-outlined,
+.body-light .logo .material-symbols-outlined {
+  color: #333333;
+}
+
+.material-symbols-outlined:hover,
+.logo .material-symbols-outlined:hover {
+  color: #ffcc00;
+}
+
+.action button {
+  border: none;
+  margin: 4px;
+  background: transparent;
+}
+
+/* Push content to the right */
+.new-note-container {
+  margin-left: 80px;
+  padding: 20px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.new-note-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+}
+
+.new-note-container-active {
+  display: flex;
+  font-family: "Poppins", serif;
+  flex-direction: column;
+  margin: 20px auto;
+  border: 1px solid;
+  max-width: 600px;
+  width: 100%;
+  padding: 0px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px rgb(251, 255, 0);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Active Note Container Color Modes */
+.body-dark .new-note-container-active {
+  border-color: #ffffff;
+  background-color: #000000;
+}
+
+.body-light .new-note-container-active {
+  border-color: #333333;
+  background-color: #ffffff;
+}
+
+.new-note-container-active * {
+  border: none;
+  padding: 10px;
+  max-width: 600px;
+}
+
+.new-note-container-active input {
+  border: none;
+  background: none;
+  font-size: large;
+  font-weight: bold;
+  outline: none;
+  color: inherit;
+}
+
+.new-note-container-active textarea {
+  border: none;
+  background: none;
+  font-size: large;
+  font-weight: bold;
+  outline: none;
+  resize: none;
+  scrollbar-width: none;
+  height: 5px;
+  color: inherit;
+}
+
+.close-note {
+  font-weight: large;
+  cursor: pointer;
+  width: 70px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Close Note Button Colors */
+.body-dark .close-note {
+  color: #ffffff;
+  background-color: #333333;
+}
+
+.body-light .close-note {
+  color: #000000;
+  background-color: #e0e0e0;
+}
+
+.close-note-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Placeholder colors for different modes */
+.body-dark .new-note-container-active textarea::placeholder,
+.body-dark .new-note-container-active input::placeholder {
+  color: #e6e6e6;
+}
+
+.body-light .new-note-container-active textarea::placeholder,
+.body-light .new-note-container-active input::placeholder {
+  color: #666666;
+}
+
+.new-note-input {
+  width: 100%;
+  max-width: 600px;
+  font-size: large;
+  font-weight: bold;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px rgb(251, 255, 0);
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* New Note Input Colors for Different Modes */
+.body-dark .new-note-input {
+  background-color: #000000;
+  color: rgb(224, 224, 224);
+  border: 2px solid white;
+}
+
+.body-light .new-note-input {
+  background-color: #ffffff;
+  color: #333333;
+  border: 2px solid #333333;
+}
+
+.body-dark .new-note-input::placeholder {
+  color: #ccc;
+}
+
+.body-light .new-note-input::placeholder {
+  color: #777;
+}
+
+/* Hover & Focus Effects */
+.body-dark .new-note-input:hover,
+.body-dark .new-note-input:focus {
+  background-color: #333;
+  border-color: #ffcc00;
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5);
+}
+
+.body-light .new-note-input:hover,
+.body-light .new-note-input:focus {
+  background-color: #f0f0f0;
+  border-color: #ffcc00;
+  box-shadow: 0px 0px 10px rgba(255, 204, 0, 0.5);
+}
+
+.notes {
+  width: 100%;
+  padding: 20px;
+}
+
+.format{
+  columns: 14rem auto;
+  column-gap: 15px;
+}
+
+.notes-container {
+ 
+  margin: 0 auto;
+  max-width: 1300px;
+}
+
+.note {
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.3s, color 0.3s, border-color 0.3s;
+  break-inside: avoid;
+  margin-bottom: 15px;
+  display: inline-block;
+  width: 90%;
+}
+
+/* Note Colors for Different Modes */
+.body-dark .note {
+  background-color: #000;
+  color: white;
+  border-color: white;
+}
+
+.body-light .note {
+  background-color: #fff;
+  color: black;
+  border-color: #c0c0c0;
+}
+
+.note:hover {
+  transform: scale(1.02);
+}
+
+.note h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.note p {
+  margin: 0;
+  font-size: 1em;
+  color: inherit;
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+}
+
+/* Footer Colors */
+.body-dark footer p {
+  color: #ccc;
+}
+
+.body-light footer p {
+  color: #666;
+}
+
+.note h1 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.note p {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
