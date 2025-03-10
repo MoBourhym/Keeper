@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-![alt text](../img/keeper.png)
+![alt text](./img/keeper.png)
 ## Available Scripts
 
 In the project directory, you can run:
